@@ -28,6 +28,7 @@ def bead_sort(sequence: list) -> list:
     ...
     TypeError: Sequence must be list of nonnegative integers
     """
+    
     if any(not isinstance(x, int) or x < 0 for x in sequence):
         raise TypeError("Sequence must be list of nonnegative integers")
     for _ in range(len(sequence)):
@@ -35,6 +36,7 @@ def bead_sort(sequence: list) -> list:
             if rod_upper > rod_lower:
                 sequence[i] -= rod_upper - rod_lower
                 sequence[i + 1] += rod_upper - rod_lower
+                
     return sequence
 
 
